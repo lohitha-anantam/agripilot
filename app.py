@@ -96,8 +96,7 @@ if "last_result" in st.session_state:
 st.divider()
 st.subheader("Assessment history")
 history=recent_assessments(8)
-if history:
-    st.dataframe(history,use_container_width=True,hide_index=True)
+if not history.empty:
+    st.dataframe(history, use_container_width=True, hide_index=True)
 else:
     st.caption("No assessments saved yet.")
-st.caption("AgriPilot is an educational prototype. Weather data requires internet access; all other core agents can run locally.")
